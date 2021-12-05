@@ -15,31 +15,25 @@ const TableExample =()=>{
         return 0;
     })
 
-    function createData(finnish, swedish, english) {
-        return { finnish, swedish,english };
+    function createData(finnish, swedish, english,short,latin) {
+        return { finnish, swedish,english,short,latin };
       }
       
       const rows = birds.map((bird,index)=>{
-          return createData(bird.finnish, bird.swedish, bird.english);
+          return createData(bird.finnish, bird.swedish, bird.english, bird.short, bird.latin);
       }); 
-      
-    //   [
-    //     createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    //     createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    //     createData('Eclair', 262, 16.0, 24, 6.0),
-    //     createData('Cupcake', 305, 3.7, 67, 4.3),
-    //     createData('Gingerbread', 356, 16.0, 49, 3.9),
-    //   ];
       
     return(
         <div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
-                    <TableRow>
+                    <TableRow style={{backgroundColor:'lightgray'}}>
                         <TableCell>Finnish</TableCell>
                         <TableCell >Swedish</TableCell>
                         <TableCell >English</TableCell>
+                        <TableCell >Short</TableCell>
+                        <TableCell >Latin</TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>
@@ -51,6 +45,8 @@ const TableExample =()=>{
                         <TableCell>{row.finnish}</TableCell>
                         <TableCell>{row.swedish}</TableCell>
                         <TableCell>{row.english}</TableCell>
+                        <TableCell>{row.short}</TableCell>
+                        <TableCell>{row.latin}</TableCell>
                         </TableRow>
                     ))}
                     </TableBody>

@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import TableExample from './TableExample';
+import Bird from './Bird.js';
 
 
 function App() {
   return (
     <div className="App">
-      <TableExample/>
+      <Bird/>
     </div>
   );
 }
